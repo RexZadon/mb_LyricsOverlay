@@ -1,6 +1,0 @@
-[
-  {"id":4001,"name":"Song (Live)","trackName":"Song (Live)","artistName":"The Artist","albumName":"Live Album","duration":262.0,"instrumental":false,"hasWordSync":false,"plainLyrics":"Live placeholder","syncedLyrics":"[00:02.00] Live placeholder","lyricsfile":null},
-  {"id":4002,"name":"Song","trackName":"Song","artistName":"The Artist","albumName":"Album","duration":201.0,"instrumental":false,"hasWordSync":false,"plainLyrics":"Studio placeholder","syncedLyrics":"[00:01.00] Studio placeholder","lyricsfile":null},
-  {"id":4003,"name":"Song","trackName":"Song","artistName":"Cover Band","albumName":"Covers","duration":200.0,"instrumental":false,"hasWordSync":false,"plainLyrics":"Cover placeholder","syncedLyrics":"[00:01.00] Cover placeholder","lyricsfile":null},
-  {"id":4004,"name":"Song","trackName":"Song","artistName":"The Artist","albumName":"Album","duration":200.0,"instrumental":false,"hasWordSync":false,"plainLyrics":null,"syncedLyrics":null,"lyricsfile":null}
-]

@@ -1,0 +1,29 @@
+<Project>
+  <!--
+    Single source of truth for release metadata. Every project in the repo imports this file.
+
+    To release a new version, change <Version> below (MAJOR.MINOR.PATCH) and add a CHANGELOG.md entry.
+    The DLL file/assembly version, the version MusicBee shows in Preferences > Plugins and the
+    User-Agent sent to lyrics services are all derived from it.
+  -->
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Authors>RexZadon</Authors>
+    <Company>RexZadon</Company>
+    <Product>Lyrics Overlay for MusicBee</Product>
+    <Copyright>Copyright (c) 2026 RexZadon</Copyright>
+    <!-- Sent in the User-Agent header (LRCLIB asks for a homepage or contact link). Must be an absolute URL. -->
+    <ProjectUrl>https://github.com/RexZadon/mb_LyricsOverlay</ProjectUrl>
+    <NeutralLanguage>en</NeutralLanguage>
+
+    <Deterministic>true</Deterministic>
+    <!-- Keep the build machine's folder names (which contain the local user name) out of the DLLs and PDBs. -->
+    <PathMap>$(MSBuildThisFileDirectory)=/_/</PathMap>
+    <TreatWarningsAsErrors Condition="'$(Configuration)' == 'Release'">true</TreatWarningsAsErrors>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <AssemblyMetadata Include="ProjectUrl" Value="$(ProjectUrl)" />
+    <AssemblyMetadata Include="Author" Value="$(Authors)" />
+  </ItemGroup>
+</Project>

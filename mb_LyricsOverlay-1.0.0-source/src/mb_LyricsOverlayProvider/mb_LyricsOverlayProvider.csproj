@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <LangVersion>9.0</LangVersion>
+    <AssemblyName>mb_LyricsOverlayProvider</AssemblyName>
+    <RootNamespace>MusicBeePlugin</RootNamespace>
+    <AssemblyTitle>Lyrics Overlay - LRCLIB provider (MusicBee plugin)</AssemblyTitle>
+    <Description>Optional MusicBee lyrics provider that fetches lyrics from LRCLIB.</Description>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <!-- Release builds land in <repo>\dist so there's one obvious place to copy from. -->
+    <OutDir Condition="'$(Configuration)' == 'Release'">$(MSBuildThisFileDirectory)..\..\dist\</OutDir>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+    <Reference Include="System.Windows.Forms" /> <!-- needed by MusicBeeInterface.cs -->
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- Core sources are compiled in (not referenced) so the plugin stays a single DLL. -->
+    <Compile Include="..\LyricsCore\*.cs" Link="Core\%(Filename)%(Extension)" />
+    <Compile Include="..\..\MusicBeeInterface.cs" Link="MusicBeeInterface.cs" />
+  </ItemGroup>
+</Project>
